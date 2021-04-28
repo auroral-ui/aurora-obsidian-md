@@ -551,6 +551,10 @@ pre.HyperMD-header.HyperMD-header-4,
 pre.HyperMD-header.HyperMD-header-5,
 pre.HyperMD-header.HyperMD-header-6 {
   position: relative;
+  font-family: var(--default-font);
+  font-weight: 600;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem !important;
 }
 
 pre.HyperMD-header.HyperMD-header-1:after,
@@ -570,40 +574,64 @@ pre.HyperMD-header.HyperMD-header-6:after {
 }
 
 .markdown-preview-section h1,
-.cm-header-1 {
-  font-size: 34px;
+.cm-s-obsidian .HyperMD-header.HyperMD-header-1 {
   color: var(--text-title-h1);
-  line-height: 1.5;
+  line-height: 1.8 !important;
+  padding-bottom: 0;
+}
+
+.markdown-preview-section h1 {
+  font-size: 34px;
 }
 
 .markdown-preview-section h2,
-.cm-header-2 {
-  font-size: 26px;
+.cm-s-obsidian .HyperMD-header.HyperMD-header-2 {
   color: var(--text-title-h2);
+  padding-bottom: 0;
+}
+
+.markdown-preview-section h2 {
+  font-size: 26px;
 }
 
 .markdown-preview-section h3,
-.cm-header-3 {
-  font-size: 22px;
+.cm-s-obsidian .HyperMD-header.HyperMD-header-3 {
   color: var(--text-title-h2);
+  padding-bottom: 2px;
+}
+
+.markdown-preview-section h3 {
+  font-size: 22px;
 }
 
 .markdown-preview-section h4,
-.cm-header-4 {
-  font-size: 18px;
+.cm-s-obsidian .HyperMD-header.HyperMD-header-4 {
   color: var(--text-title-h4);
+  padding-bottom: 6px;
+}
+
+.markdown-preview-section h4 {
+  font-size: 18px;
 }
 
 .markdown-preview-section h5,
-.cm-header-5 {
-  font-size: 18px;
+.cm-s-obsidian .HyperMD-header.HyperMD-header-5 {
   color: var(--text-title-h5);
+  padding-bottom: 6px;
+}
+
+.markdown-preview-section h5 {
+  font-size: 18px;
 }
 
 .markdown-preview-section h6,
-.cm-header-6 {
-  font-size: 18px;
+.cm-s-obsidian .HyperMD-header.HyperMD-header-6 {
   color: var(--text-title-h5);
+  padding-bottom: 6px;
+}
+
+.markdown-preview-section h6 {
+  font-size: 18px;
 }
 
 /** headings */
@@ -626,14 +654,10 @@ pre.HyperMD-header.HyperMD-header-6:after {
   height: 0.25rem;
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 0;
   width: 6rem;
   content: '';
   background: linear-gradient(130deg, #24c6dc, #5433ff 41.07%, #f09 76.05%);
-}
-
-.markdown-preview-view h1:after {
-  bottom: -2px;
 }
 
 .view-header-icon {
@@ -641,7 +665,6 @@ pre.HyperMD-header.HyperMD-header-6:after {
 }
 
 /** Adding different # colors **/
-
 .cm-formatting.cm-formatting-header.cm-header {
   color: var(--text-accent);
   opacity: 0.45;
@@ -1001,7 +1024,8 @@ h6 a.tag {
 
 .cm-formatting.cm-formatting-code.cm-inline-code.cm-list-1 {
   color: var(--text-faint) !important;
-  opacity: 0.25;
+  background: transparent;
+  opacity: 1;
 }
 
 .cm-s-obsidian span.cm-inline-code:not(.cm-formatting-code) {
@@ -1158,6 +1182,7 @@ blockquote {
   border-top: transparent;
   border-bottom: transparent;
   border-right: transparent;
+  margin-inline-start: 0;
   background: linear-gradient(
     135deg,
     var(--background-primary-alt),
