@@ -1049,6 +1049,16 @@ h6 a.tag {
 }
 
 /**-------------------**
+| HIGHLIGHTING STYLES
+**--------------------**/
+
+.cm-s-obsidian span.cm-formatting-highlight {
+  background-color: transparent !important;
+  color: var(--text-faint) !important;
+  opacity: 0.25;
+}
+
+/**-------------------**
 | CODE FENCE STYLING
 **--------------------**/
 
