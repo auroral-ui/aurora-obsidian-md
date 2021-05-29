@@ -71,7 +71,7 @@ You can customized the theme using the variables below
     'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', sans-serif;
 
-  --default-font-size: 16px;
+  --default-font-size: 1.05rem;
 
   /** Main text font weight **/
   --body-font-weight: 450;
@@ -246,7 +246,14 @@ pre.HyperMD-quote:before {
 
 body {
   font-weight: var(--body-font-weight, normal);
-  font-size: var(--default-font-size, 16px);
+  font-size: var(--default-font-size, 16px) !important;
+}
+
+body [role='presentation'] pre,
+body [role='presentation'] div,
+body .markdown-preview-section div {
+  font-weight: var(--body-font-weight, normal);
+  font-size: var(--default-font-size, 16px) !important;
 }
 
 ::-webkit-scrollbar {
