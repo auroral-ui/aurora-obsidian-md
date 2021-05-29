@@ -74,7 +74,7 @@ You can customized the theme using the variables below
   --default-font-size: 1.05rem;
 
   /** Main text font weight **/
-  --body-font-weight: 450;
+  --body-font-weight: normal;
 
   /** Font family for hash-tags **/
   --tag-font-family: 'OperatorMonoSSmLig-Book', 'Glow Sans SC', '华文细黑',
