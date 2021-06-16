@@ -216,10 +216,14 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::before {
 /* with left border rendered instead of > */
 div:not(.CodeMirror-activeline)
   > .CodeMirror-line
-  span.cm-formatting.cm-formatting-quote,
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hmd-indent-in-quote {
+  span.cm-formatting.cm-formatting-quote {
   display: inline !important;
   color: transparent !important;
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hmd-indent-in-quote {
+  display: inline !important;
+  color: var(--text-a) !important;
 }
 
 div:not(.CodeMirror-activeline) > pre.HyperMD-quote {
