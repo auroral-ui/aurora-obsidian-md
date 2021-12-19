@@ -4,8 +4,8 @@
 ** ███████ ██    ██ ██████  ██     ██ ██████   ███████ 
 ** ██   ██ ██    ██ ██   ██ ██     ██ ██   ██  ██   ██ 
 ** ██     ██ ██████  ██    ██  ██████  ██     ██  ██    ██ 
-**  —— Version 2.0.0
-**  —— by Benny Guo
+**  —— Version 1.0.0
+**  —— Made with 💎 by TriDiamond
 ** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
 
@@ -56,6 +56,17 @@
   --Code--pink: rgb(235, 89, 224);
   --Code--blue: #61d0ff;
   --Code--comment: #6c6d72;
+
+  /*graph*/
+  --graph-text-color: var(--text-normal);
+  --graphtag: var(--text-dim);
+  --graph-attach: var(--text-sub-accent);
+  --graph-circle: var(--text-accent);
+  --graph-line: var(--text-highlight-bg);
+  --graph-unresolved: var(--bg-sub-accent-55);
+  --link-unresolved-highlight: var(--text-accent);
+  --graph-arrow: var(--text-sub-accent);
+  --graph-control-bg: var(--background-secondary);
 }
 
 /******************************************
@@ -1642,4 +1653,55 @@ pre.line-numbers > code {
   display: block;
   padding-right: 0.8em;
   text-align: right;
+}
+
+/* ======= graph view ==============*/
+.workspace-leaf-content[data-type='graph'] canvas {
+}
+
+.workspace-leaf-content[data-type='graph'] .graph-controls {
+  background-color: var(--graph-control-bg);
+  border: none;
+}
+
+.graph-view.color-fill {
+  color: var(--graph-circle);
+}
+
+.graph-view.color-circle {
+  color: transparent;
+}
+
+.graph-view.color-line {
+  color: var(--graph-line);
+}
+
+.graph-view.color-text {
+  color: var(--graph-text-color);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--interactive-accent);
+}
+
+.graph-view.color-line-highlight {
+  color: var(--interactive-accent);
+}
+
+.graph-view.color-fill-tag {
+  color: var(--graphtag) !important;
+}
+
+.graph-view.color-fill-attachment {
+  color: var(--graph-attach) !important;
+}
+
+.graph-view.color-fill-unresolved {
+  color: var(--graph-unresolved);
+  opacity: 1;
+}
+
+.graph-view.color-arrow {
+  color: var(--graph-arrow);
+  opacity: 1;
 }
