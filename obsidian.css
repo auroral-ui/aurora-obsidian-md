@@ -1,16 +1,16 @@
 /** ---------------------------------------------------------------
-**   █████  ██     ██ ██████   ██████   ██████     █████ 
+**   █████   ██    ██ ██████   ██████  ██████     █████ 
 ** ██   ██ ██    ██ ██   ██ ██   ██ ██   ██  ██   ██ 
 ** ███████ ██    ██ ██████  ██     ██ ██████   ███████ 
 ** ██   ██ ██    ██ ██   ██ ██     ██ ██   ██  ██   ██ 
-** ██     ██ ██████  ██    ██  ██████  ██     ██  ██    ██ 
-**  —— Version 1.0.0
-**  —— Made with 💎 by TriDiamond
+** ██     ██ ██████  ██    ██  ██████  ██     ██  ██    ██ 
+**  —— Version 2.0.0
+**  —— by Benny Guo
 ** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
 
 /******************************************
-   Will only comes in dark theme
+  Will only comes in dark theme
 ******************************************/
 
 .theme-dark {
@@ -49,6 +49,7 @@
   --test-color: rgb(122, 162, 247);
   --editor-border-color: #101014;
   --text-selection: #59396359;
+  --background-modifier-border: var(--text-accent);
 
   --Code--subs: #3f4144;
   --Code--purple: #893cf5;
@@ -67,9 +68,8 @@ You can customized the theme using the variables below
   /***************************************/
 
   /** Font Customization **/
-  --default-font: 'Rubik', 'Glow Sans SC', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', sans-serif;
+  --default-font: 'Rubik', 'Glow Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
 
   --default-font-size: 1.05rem;
 
@@ -77,10 +77,9 @@ You can customized the theme using the variables below
   --body-font-weight: normal;
 
   /** Font family for hash-tags **/
-  --tag-font-family: 'OperatorMonoSSmLig-Book', 'Glow Sans SC', '华文细黑',
-    'STXihei', 'PingFang TC', '微软雅黑体', 'Microsoft YaHei New', '微软雅黑',
-    'Microsoft Yahei', '宋体', 'SimSun', 'Helvetica Neue', 'Helvetica', Arial,
-    sans-serif !important;
+  --tag-font-family: 'OperatorMonoSSmLig-Book', 'Glow Sans SC', '华文细黑', 'STXihei', 'PingFang TC',
+    '微软雅黑体', 'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun',
+    'Helvetica Neue', 'Helvetica', Arial, sans-serif !important;
 
   /** Font specially for codes **/
   --code-mono-font: 'OperatorMonoSSmLig-Book';
@@ -107,9 +106,7 @@ a.tag[href*='#进行中'] {
   color: #fff;
 }
 
-.cm-s-obsidian
-  .CodeMirror-line
-  span.cm-tag-working-draft:not(.cm-formatting-hashtag) {
+.cm-s-obsidian .CodeMirror-line span.cm-tag-working-draft:not(.cm-formatting-hashtag) {
   color: #a897ff;
 }
 
@@ -129,9 +126,7 @@ a.tag[href*='#知识'] {
   color: #fff;
 }
 
-.cm-s-obsidian
-  .CodeMirror-line
-  span.cm-tag-knowledge:not(.cm-formatting-hashtag) {
+.cm-s-obsidian .CodeMirror-line span.cm-tag-knowledge:not(.cm-formatting-hashtag) {
   color: #6cbdf3;
 }
 
@@ -141,9 +136,7 @@ a.tag[href*='#文章'] {
   color: #fff;
 }
 
-.cm-s-obsidian
-  .CodeMirror-line
-  span.cm-tag-writing:not(.cm-formatting-hashtag) {
+.cm-s-obsidian .CodeMirror-line span.cm-tag-writing:not(.cm-formatting-hashtag) {
   color: #ff7a7a;
 }
 
@@ -173,71 +166,15 @@ a.tag[href*='#想法'] {
 /*******************************************************/
 
 /**-------------------**
-| HR CLUTTER FREE
-**--------------------**/
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr {
-  opacity: 0;
-  position: relative;
-}
-
-div > .CodeMirror-line span.cm-hr {
-  display: inline-block;
-  padding: 1.7em 0;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::before {
-  position: absolute;
-  content: '';
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(130deg, #24c6dc, #5433ff 41.07%, #f09 76.05%);
-  margin-block-start: 2.5em;
-  margin-block-end: 2.5em;
-  height: 3px;
-  width: 26%;
-  border-radius: 9999px;
-  opacity: 0.35;
-  margin: 2.5em auto;
-}
-
-/**-------------------**
 | BLOCK-QUOTE CLUTTER FREE
 **--------------------**/
 
-.CodeMirror-line span.cm-formatting-quote {
+.markdown-source-view .HyperMD-quote {
+  background: transparent !important;
+}
+
+.HyperMD-quote span.cm-formatting-quote {
   color: var(--text-accent) !important;
-}
-
-.cm-s-obsidian span.cm-quote {
-  color: var(--text-normal);
-}
-
-/* with left border rendered instead of > */
-div:not(.CodeMirror-activeline)
-  > .CodeMirror-line
-  span.cm-formatting.cm-formatting-quote {
-  display: inline !important;
-  color: transparent !important;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hmd-indent-in-quote {
-  display: inline !important;
-  color: var(--text-a) !important;
-}
-
-div:not(.CodeMirror-activeline) > pre.HyperMD-quote {
-  position: relative;
-}
-
-pre.HyperMD-quote:before {
-  position: absolute;
-  content: '';
-  height: 100%;
-  width: 3px;
-  left: -0.2em;
-  top: 0;
-  background-color: var(--text-accent);
 }
 
 /**************************************
@@ -250,14 +187,12 @@ pre.HyperMD-quote:before {
 
 body {
   font-weight: var(--body-font-weight, normal);
-  font-size: var(--default-font-size, 16px) !important;
 }
 
 body [role='presentation'] pre,
 body [role='presentation'] div,
 body .markdown-preview-section div {
   font-weight: var(--body-font-weight, normal);
-  font-size: var(--default-font-size, 16px) !important;
 }
 
 ::-webkit-scrollbar {
@@ -310,7 +245,6 @@ body .markdown-preview-section div {
 }
 
 /** NAVIGATION / SIDE-DOCK **/
-
 .nav-folder-collapse-indicator {
   color: var(--text-accent);
 }
@@ -490,11 +424,7 @@ span.cm-formatting-list,
   color: var(--interactive-accent) !important;
 }
 
-.markdown-preview-view
-  ul
-  > li.task-list-item.is-checked
-  ul
-  > li:not(.is-checked) {
+.markdown-preview-view ul > li.task-list-item.is-checked ul > li:not(.is-checked) {
   text-decoration: none !important;
   color: var(--text-normal) !important;
 }
@@ -523,15 +453,12 @@ span.cm-formatting-list,
 @keyframes bounce {
   0% {
     border-width: 2px;
-    /* transform: scale(1); */
   }
   33% {
     border-width: 4px;
-    /* transform: scale(0.7); */
   }
   100% {
     border-width: 10px;
-    /* transform: scale(1); */
   }
 }
 
@@ -555,12 +482,12 @@ h6 {
   font-weight: 600;
 }
 
-pre.HyperMD-header.HyperMD-header-1,
-pre.HyperMD-header.HyperMD-header-2,
-pre.HyperMD-header.HyperMD-header-3,
-pre.HyperMD-header.HyperMD-header-4,
-pre.HyperMD-header.HyperMD-header-5,
-pre.HyperMD-header.HyperMD-header-6 {
+.HyperMD-header.HyperMD-header-1,
+.HyperMD-header.HyperMD-header-2,
+.HyperMD-header.HyperMD-header-3,
+.HyperMD-header.HyperMD-header-4,
+.HyperMD-header.HyperMD-header-5,
+.HyperMD-header.HyperMD-header-6 {
   position: relative;
   font-family: var(--default-font);
   font-weight: 600;
@@ -568,12 +495,12 @@ pre.HyperMD-header.HyperMD-header-6 {
   padding-bottom: 0.65rem !important;
 }
 
-pre.HyperMD-header.HyperMD-header-1:after,
-pre.HyperMD-header.HyperMD-header-2:after,
-pre.HyperMD-header.HyperMD-header-3:after,
-pre.HyperMD-header.HyperMD-header-4:after,
-pre.HyperMD-header.HyperMD-header-5:after,
-pre.HyperMD-header.HyperMD-header-6:after {
+.HyperMD-header.HyperMD-header-1:after,
+.HyperMD-header.HyperMD-header-2:after,
+.HyperMD-header.HyperMD-header-3:after,
+.HyperMD-header.HyperMD-header-4:after,
+.HyperMD-header.HyperMD-header-5:after,
+.HyperMD-header.HyperMD-header-6:after {
   border-radius: 9999px;
   height: 0.25rem;
   position: absolute;
@@ -653,6 +580,7 @@ pre.HyperMD-header.HyperMD-header-6:after {
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
   position: relative;
+  padding-bottom: 1rem;
 }
 
 .markdown-preview-view h1:after,
@@ -665,7 +593,7 @@ pre.HyperMD-header.HyperMD-header-6:after {
   height: 0.25rem;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0.6rem;
   width: 6rem;
   content: '';
   background: linear-gradient(130deg, #24c6dc, #5433ff 41.07%, #f09 76.05%);
@@ -684,6 +612,35 @@ pre.HyperMD-header.HyperMD-header-6:after {
 /**-------------------**
 | HR STYLES
 **--------------------**/
+
+.HyperMD-hr {
+  display: inline-block !important;
+  /* padding: 1em 0 !important; */
+}
+
+.hr.cm-line {
+  display: inline-block;
+  /* padding: 1em 0; */
+}
+
+.hr.cm-line hr {
+  border-color: transparent;
+}
+
+.hr.cm-line::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(130deg, #24c6dc, #5433ff 41.07%, #f09 76.05%);
+  margin-block-start: 2.5em;
+  margin-block-end: 2.5em;
+  height: 3px;
+  width: 26%;
+  border-radius: 9999px;
+  opacity: 0.35;
+  /* margin: 2.5em auto; */
+}
 
 /** hr styles -- PREVIEW MODE */
 .markdown-preview-view hr {
@@ -706,14 +663,13 @@ pre.HyperMD-header.HyperMD-header-6:after {
 .cm-formatting.cm-formatting-strong.cm-strong,
 .cm-formatting.cm-formatting-em.cm-em {
   color: var(--text-faint) !important;
-  opacity: 0.25;
+  opacity: 0.75;
 }
 
 .cm-strong:not(.cm-formatting-strong),
 strong {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding: 0 0.1rem;
   color: #87ebfd;
   background-color: #87ebfd;
   background-image: linear-gradient(62deg, #87ebfd 0%, #b76aff 100%) !important;
@@ -747,13 +703,6 @@ em {
   font-family: OperatorMonoSSmLig-Book, Rubik !important;
 }
 
-.cm-em.cm-formatting-em {
-  display: inline-flex;
-  width: 0.45rem;
-  font-size: 0.6rem;
-  vertical-align: text-top;
-}
-
 /**-------------------**
 | LISTING STYLES (ul, li, ol)
 **--------------------**/
@@ -762,15 +711,37 @@ em {
   color: var(--text-a);
 }
 
-/* Adding a rule line before ul list -- EDITOR Mode  */
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-2::before,
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-3::before,
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-4::before {
+.markdown-source-view.mod-cm6 .HyperMD-list-line {
+  position: relative;
+}
+
+.cm-s-obsidian .HyperMD-list-line .list-bullet {
+  color: var(--text-dim);
+}
+
+.cm-s-obsidian .HyperMD-list-line.HyperMD-list-line-1 .list-bullet::before,
+.cm-s-obsidian .HyperMD-list-line.HyperMD-list-line-1 .list-bullet::after,
+.cm-s-obsidian .HyperMD-list-line.HyperMD-list-line-2 .list-bullet::after {
+  opacity: 0;
+}
+
+.cm-s-obsidian .HyperMD-list-line .list-bullet::before {
   content: '';
   border-left: 2px solid var(--text-accent);
   position: absolute;
   opacity: 0.35;
-  left: 0.5em;
+  left: 0.4em;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.cm-s-obsidian .HyperMD-list-line .list-bullet::after {
+  content: '';
+  border-left: 2px solid var(--text-accent);
+  position: absolute;
+  opacity: 0.35;
+  left: 1.4em;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -782,6 +753,7 @@ ol ol,
 .markdown-preview-section > ul > li {
   position: relative;
 }
+
 ol > li > ol::before,
 ul > li > ul::before {
   content: '';
@@ -860,17 +832,16 @@ ul .task-list-item ul::before {
 **--------------------**/
 
 /** editor mode **/
-.cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-hmd-internal-link {
-  text-shadow: -1px -1px 2px var(--background-secondary),
-    -1px 1px 2px var(--background-secondary),
-    1px -1px 2px var(--background-secondary),
-    1px 1px 2px var(--background-secondary);
-  color: var(--text-normal);
+.cm-link,
+.cm-underline,
+.cm-hmd-internal-link {
+  font-weight: 500;
+  color: var(--text-normal) !important;
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 5px 5px;
   text-decoration: none;
+  transition: all 350ms ease;
 }
 
 .cm-s-obsidian span.cm-link {
@@ -881,12 +852,9 @@ ul .task-list-item ul::before {
   );
 }
 
+.cm-underline,
 .cm-s-obsidian span.cm-hmd-internal-link {
-  background-image: linear-gradient(
-    to bottom,
-    var(--bg-accent-55) 0%,
-    var(--bg-accent-55) 100%
-  );
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
 }
 
 .cm-s-obsidian span.cm-formatting-link {
@@ -899,6 +867,7 @@ ul .task-list-item ul::before {
   padding: 0;
 }
 
+.cm-underline,
 .internal-link,
 .external-link {
   -webkit-text-fill-color: var(--text-normal);
@@ -910,13 +879,10 @@ ul .task-list-item ul::before {
 }
 
 .internal-link {
-  background-image: linear-gradient(
-    to bottom,
-    var(--bg-accent-55) 0%,
-    var(--bg-accent-55) 100%
-  );
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
 }
 
+.cm-link,
 .external-link {
   background-image: linear-gradient(
     to bottom,
@@ -925,21 +891,26 @@ ul .task-list-item ul::before {
   );
 }
 
+.cm-underline:hover,
 .internal-link:hover {
   -webkit-text-fill-color: var(--text-accent);
   background-size: 4px 50px;
+  text-shadow: none;
 }
 
+.cm-link:hover,
 .external-link:hover {
   -webkit-text-fill-color: var(--text-sub-accent);
   background-size: 4px 50px;
+  text-shadow: none;
 }
 
 /* link */
 a,
 .internal-link,
 .cm-hmd-internal-link,
-.cm-link {
+.cm-link,
+.cm-underline {
   text-decoration: none !important;
   color: var(--text-normal);
   position: relative;
@@ -959,7 +930,8 @@ a,
 
 /* link hover color */
 a:hover,
-.internal-link:hover {
+.internal-link:hover,
+.cm-underline:hover {
   text-decoration: none !important;
   color: var(--text-accent);
 }
@@ -968,7 +940,7 @@ a:hover,
 | TAG STYLING
 **--------------------**/
 
-.cm-s-obsidian .CodeMirror-line span.cm-hashtag {
+.cm-line .cm-hashtag {
   position: relative;
   color: var(--text-accent);
   opacity: 1;
@@ -977,9 +949,10 @@ a:hover,
   text-decoration: none;
   font-size: 0.86rem;
   font-weight: 500;
+  text-decoration: none !important;
 }
 
-.cm-s-obsidian .CodeMirror-line span.cm-formatting-hashtag {
+.cm-line .cm-formatting.cm-formatting-hashtag {
   color: var(--text-faint);
 }
 
@@ -995,11 +968,7 @@ a.tag {
   padding: 0.05rem 0.5rem;
   font-family: var(--tag-font-family);
   font-size: 0.8rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(25, 22, 33) 0%,
-    rgba(25, 22, 33) 100%
-  );
+  background: linear-gradient(to bottom, rgba(25, 22, 33) 0%, rgba(25, 22, 33) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 0 0;
@@ -1074,40 +1043,35 @@ h6 a.tag {
   background-color: var(--background-secondary);
 }
 
-.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border: none;
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  padding: 0 1rem;
 }
 
-.cm-s-obsidian div.HyperMD-codeblock-begin-bg:before {
-  position: absolute;
-  content: '';
-  top: -59%;
-  left: 0;
-  width: 100%;
-  height: 60%;
-  border-top-left-radius: 0.3em;
-  border-top-right-radius: 0.3em;
-  background-color: var(--background-secondary);
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+  border-top-left-radius: 0.6tem;
+  border-top-right-radius: 0.6rem;
+  border: none;
+  overflow: hidden;
+  padding-top: 0.3rem;
+  color: var(--Code--comment);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg .code-block-flair {
+  color: var(--text-accent) !important;
+  background: rgba(16, 14, 23, 0.86);
+  border-radius: 8px;
+  font-family: Rubik, Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
+  font-weight: 600;
+  margin-right: -0.5rem;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-end-bg {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border: none;
-}
-
-.cm-s-obsidian div.HyperMD-codeblock-end-bg:before {
-  position: absolute;
-  content: '';
-  bottom: -59%;
-  left: 0;
-  width: 100%;
-  height: 60%;
-  border-bottom-left-radius: 0.3em;
-  border-bottom-right-radius: 0.3em;
-  background-color: var(--background-secondary);
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+  border: 0;
+  overflow: hidden;
+  padding-bottom: 0.3rem;
+  color: var(--Code--comment);
 }
 
 .HyperMD-codeblock.CodeMirror-line {
@@ -1119,10 +1083,9 @@ pre {
 }
 
 pre[class*='language-']:before {
-  font-family: Rubik, Lato, Lucida Grande, Lucida Sans Unicode, Tahoma,
-    Sans-Serif;
+  font-family: Rubik, Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.6rem;
   color: #fff;
   position: absolute;
@@ -1193,7 +1156,7 @@ blockquote {
 
 .markdown-preview-view blockquote {
   position: relative;
-  padding: 1rem 2rem 1rem 3rem;
+  padding: 1rem 2rem 1rem 1rem;
   color: #bdbdbd;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -1204,11 +1167,7 @@ blockquote {
   border-bottom: transparent;
   border-right: transparent;
   margin-inline-start: 0;
-  background: linear-gradient(
-    135deg,
-    var(--background-primary-alt),
-    var(--background-primary)
-  );
+  background: linear-gradient(135deg, var(--background-primary-alt), var(--background-primary));
 }
 
 .markdown-preview-view blockquote::before {
@@ -1218,11 +1177,7 @@ blockquote {
   left: -1px;
   height: 2px;
   width: 60%;
-  background: linear-gradient(
-    90deg,
-    var(--bg-accent-55),
-    var(--background-primary)
-  );
+  background: linear-gradient(90deg, var(--bg-accent-55), var(--background-primary));
 }
 
 .markdown-preview-view blockquote::after {
@@ -1232,18 +1187,14 @@ blockquote {
   left: -1px;
   height: 2px;
   width: 25%;
-  background: linear-gradient(
-    90deg,
-    var(--bg-accent-55),
-    var(--background-primary)
-  );
+  background: linear-gradient(90deg, var(--bg-accent-55), var(--background-primary));
 }
 
 .markdown-preview-view blockquote p {
   position: relative;
 }
 
-.markdown-preview-view blockquote p:first-of-type::before {
+/* .markdown-preview-view blockquote p:first-of-type::before {
   content: '!!';
   font-style: italic;
   font-weight: 700;
@@ -1252,7 +1203,7 @@ blockquote {
   position: absolute;
   top: 0.1rem;
   left: -1.8rem;
-}
+} */
 
 /**-------------------**
 | FRONT-META STYLING
@@ -1379,8 +1330,8 @@ pre[class*='language-'] {
   color: #ccc;
   background: transparent;
   text-shadow: none;
-  font-family: 'OperatorMonoSSmLig-Book', PT Mono, Consolas, Monaco,
-    'Andale Mono', 'Ubuntu Mono', monospace !important;
+  font-family: 'OperatorMonoSSmLig-Book', PT Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace !important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
