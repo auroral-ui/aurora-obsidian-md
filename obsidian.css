@@ -42,6 +42,7 @@
   --bg-sub-accent-55: rgba(93, 180, 220, 0.75);
   --bg-accent-55: rgba(137, 60, 245, 0.55);
   --bg-accent-75: rgba(137, 60, 245, 0.75);
+  --bg-accent-25: rgba(137, 60, 245, 0.25);
   --text-highlight-bg: var(--bg-accent-55);
   --background-modifier-border: #202020;
   --test-color: rgb(122, 162, 247);
@@ -207,6 +208,10 @@ a.tag[href*='#想法'] {
 }
 
 /** NAVIGATION / SIDE-DOCK **/
+.nav-file-title,
+.nav-folder-title {
+  border: 1px solid transparent;
+}
 
 .nav-folder-collapse-indicator {
   color: var(--text-accent);
@@ -264,13 +269,15 @@ a.tag[href*='#想法'] {
 
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  background: #59396338;
+  background: var(--background-modifier-border);
+  border: 1px solid var(--bg-accent-55);
   color: var(--text-accent);
 }
 
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
-  background: #59396359;
+  background: var(--background-modifier-border);
+  border: 1px solid var(--interactive-accent-hover);
 }
 
 /** Folder Lists **/
@@ -685,6 +692,18 @@ em {
   color: var(--text-accent);
 }
 
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  border-width: 2px;
+  border-color: var(--text-accent);
+  margin-left: -1px;
+  opacity: 0.35;
+  transition: opacity 500ms linear ease-in-out;
+}
+
+.markdown-source-view.mod-cm6 .cm-active-indent::before {
+  opacity: 0.8;
+}
+
 /**-------------------**
 | LINKS STYLING
 **--------------------**/
@@ -746,16 +765,16 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
 
 .internal-link:hover,
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline:hover {
-  -webkit-text-fill-color: var(--text-normal);
-  color: var(--text-normal);
+  -webkit-text-fill-color: #fff;
+  color: #fff;
   background-size: 4px 50px;
   text-decoration-line: none !important;
 }
 
 .cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline:hover,
 .external-link:hover {
-  -webkit-text-fill-color: var(--text-normal);
-  color: var(--text-normal);
+  -webkit-text-fill-color: #fff;
+  color: #fff;
   background-size: 4px 50px;
   text-decoration-line: none !important;
 }
@@ -998,6 +1017,7 @@ blockquote {
 
 /* blockquote style overwrite */
 
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote,
 .markdown-preview-view blockquote {
   position: relative;
   padding: 1rem 2rem 1rem 3rem;
