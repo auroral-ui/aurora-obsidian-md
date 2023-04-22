@@ -853,13 +853,13 @@ h6 a.tag {
 | INLINE CODE STYLING
 **--------------------**/
 
-.CodeMirror-activeline
+/* .CodeMirror-activeline
   span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(
     .obsidian-search-match-highlight
   ) {
   padding: 0 !important;
   margin: 0 !important;
-}
+} */
 
 .cm-formatting.cm-formatting-code.cm-inline-code.cm-list-1 {
   color: var(--text-faint) !important;
@@ -868,16 +868,13 @@ h6 a.tag {
 }
 
 .cm-s-obsidian span.cm-inline-code:not(.cm-formatting-code) {
-  border-radius: 0.3rem;
   color: var(--text-sub-accent);
-  opacity: 1;
-  background-color: rgba(235, 89, 224, 0.05) !important;
 }
 
-.cm-s-obsidian span.cm-inline-code.cm-formatting-code {
-  display: inline-flex;
-  max-width: 0.55rem;
-  min-width: 0.55rem;
+.cm-s-obsidian span.cm-inline-code {
+  border-radius: 0.3rem;
+  opacity: 1;
+  background-color: rgba(235, 89, 224, 0.05) !important;
 }
 
 /**-------------------**
